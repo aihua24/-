@@ -1,0 +1,14 @@
+INFITF.Application CATIA;
+try
+{
+    CATIA=(INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
+}
+catch
+{
+   Type oType = System.Type.GetTypeFromProgID("CATIA.Application");
+   CATIA = (INFITF.Application)Activator.CreateInstance(oType);
+   CATIA.Visible = true;
+}
+————————————————
+版权声明：本文为CSDN博主「just0kk」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/just0kk/article/details/57405909
